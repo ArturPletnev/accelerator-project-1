@@ -1,0 +1,142 @@
+.video {
+  position: relative;
+  min-height: 170px;
+  background-color: $divider;
+  background-image: url("/img/about/video-preview-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (resolution >= 2dppx) {
+    background-image: url("/img/about/video-preview-mobile@2x.jpg");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(20, 54, 122, 0.5);
+  }
+
+  @include tablet {
+    max-width: 270px;
+    background-image: url("/img/about/video-preview-tablet.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("/img/about/video-preview-tablet@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    min-width: 360px;
+    max-width: 360px;
+    min-height: 230px;
+    background-image: url("/img/about/video-preview-desktop.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("/img/about/video-preview-desktop@2x.jpg");
+    }
+  }
+}
+
+.video__play-button {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 115%);
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  background: linear-gradient(95deg, $accent-bg 0%, $secondary-bg 100%);
+  outline: 2px solid rgba(237, 2, 51, 0.2);
+  outline-offset: 8px;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 12px;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    mask-image: url("/__spritemap#sprite-play-view");
+    mask-size: 9px 12px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    z-index: 1;
+  }
+
+  @include desktop {
+    width: 72px;
+    height: 72px;
+    outline-offset: 11px;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      width: 17px;
+      height: 17px;
+      mask-size: 17px 17px;
+      left: 53%;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: $white;
+      outline: 2px solid rgba(16, 38, 84, 0.6);
+
+      &::before {
+        background-color: rgba(16, 38, 84, 0.6);
+      }
+    }
+  }
+
+  &:focus {
+    background: #c8c9cc;
+    outline: 2px solid $primary-dark;
+
+    &::before {
+      background-color: $primary-dark;
+    }
+  }
+
+  &:active {
+    background: $white;
+    outline: 2px solid $primary-dark;
+    transform: translate(-50%, 115%) scale(0.8);
+    outline-offset: 17px;
+
+    @include desktop {
+      transform: translate(-50%, -50%) scale(0.8);
+      outline-offset: 23px;
+    }
+  }
+}
+
+.video__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.video--disabled {
+  pointer-events: none;
+
+  &::before {
+    background: $white;
+    outline: 2px solid $primary-dark;
+    opacity: 0.4;
+  }
+
+  .video__play-button {
+    background-color: $primary-dark;
+    opacity: 0.4;
+  }
+}

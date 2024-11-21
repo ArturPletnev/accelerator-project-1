@@ -1,0 +1,140 @@
+.hero {
+  padding: 0 15px 32px;
+  background: linear-gradient(90deg, $btn-border 0%, $btn-border 0.01%, #1a3578 39.11%, #73184b 75.5%, #b4022a 100%);
+
+  @include tablet {
+    padding: 0 45px 100px;
+  }
+
+  @include desktop {
+    padding: 0 45px 120px;
+  }
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: 113px 156px;
+  gap: 15px 22px;
+
+  @include tablet {
+    grid-template-columns: 113px 185px 1fr;
+    gap: 11px 27px;
+  }
+
+  @include desktop {
+    grid-template-columns: 118px 270px 1fr;
+    gap: 40px 0;
+    padding: 0 72px 0 145px;
+  }
+}
+
+.hero__text {
+  margin: 0;
+  max-width: 113px;
+  grid-row: 2;
+  align-self: flex-end;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: $white;
+
+  @include tablet {
+    padding: 0 0 25px;
+    grid-row: -4;
+    grid-column: 1;
+    line-height: 22px;
+  }
+
+  @include desktop {
+    margin: 0 0 70px;
+    padding: 0;
+    max-width: 118px;
+  }
+}
+
+.hero__city {
+  margin: 0 2px 0 0;
+  grid-column: 2;
+  font-family: $second-family;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  color: $white;
+  text-align: right;
+
+  @include tablet {
+    margin: 31px 0 0;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include desktop {
+    margin: 52px 2px 0 0;
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+.hero__title {
+  margin: 0;
+  grid-column: 2;
+  font-family: $second-family;
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 62px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: right;
+  color: $white;
+
+  @include tablet {
+    font-size: 72px;
+    line-height: 85px;
+    letter-spacing: 2px;
+  }
+
+  @include desktop {
+    margin-right: 2px;
+    font-size: 92px;
+    line-height: 110px;
+    letter-spacing: 4px;
+  }
+}
+
+.hero__image-wrapper {
+  display: none;
+
+  @include tablet {
+    display: block;
+    justify-self: end;
+    grid-column: 3;
+    grid-row: 1 / -5;
+  }
+}
+
+.hero__image {
+  display: block;
+}
+
+.hero__link {
+  margin: 32px 0 0;
+  text-decoration: none;
+  grid-column: 1 / -1;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include tablet {
+    padding: 22px;
+    margin: 38px 0 0;
+    grid-column: 2;
+  }
+
+  @include desktop {
+    margin: 0;
+    padding: 27px;
+  }
+}

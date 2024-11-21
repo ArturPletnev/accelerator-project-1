@@ -5,9 +5,10 @@ body {
   min-height: 100%;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
   line-height: normal;
-  background-color: aqua;
+  min-width: 320px;
+  font-family: $font-family;
+  font-weight: 400;
 }
 
 html {

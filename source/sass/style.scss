@@ -2,14 +2,23 @@
 
 @import "vendor/normalize";
 
-// Common
-
-@import "./common/fonts";
-@import "./common/global";
-@import "./common/variables";
-
 // Mixins
 
 @import "./mixins/media";
 @import "./mixins/mixins";
+
+// Common
+
+@import "./common/variables";
+@import "./common/fonts";
+@import "./common/global";
+@import "./common/container";
+
+// Blocks
+
+@import "./blocks/page";
+@import "./blocks/hero";
+@import "./blocks/header";
+@import "./blocks/about";
+@import "./blocks/video";
 

@@ -1,0 +1,67 @@
+.page__button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    color: #c8c9cc;
+    pointer-events: none;
+  }
+
+  &--light {
+    padding: 24px;
+    color: $white;
+    box-shadow: inset 0 0 0 2px $white;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $price;
+        background-color: $white;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: $price;
+      box-shadow: inset 0 0 0 2px #000000;
+    }
+
+    &:active {
+      background-color: $white;
+      color: $primary-dark;
+    }
+  }
+
+  &--dark {
+    padding: 22px;
+    color: $primary-dark;
+    box-shadow: inset 0 0 0 2px $primary-dark;
+  }
+}
+
+.page__button--light:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.page__button--dark:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.page__title {
+  font-family: $second-family;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: $primary-dark;
+
+  @include tablet {
+    font-size: 42px;
+  }
+
+  @include desktop {
+    font-size: 54px;
+  }
+}
