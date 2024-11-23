@@ -140,3 +140,9 @@
     transform: none;
   }
 }
+
+.about__image-wrapper {
+  @include desktop {
+    width: 660px;
+  }
+}

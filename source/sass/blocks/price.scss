@@ -1,0 +1,195 @@
+.price {
+  padding: 40px 15px;
+  background-color: $primary-bg;
+
+  @include tablet {
+    padding: 60px 194px;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 325px;
+      height: 388px;
+      right: 0;
+      bottom: 0;
+      background-image: url("/img/price/price-decoration-tablet.png");
+      background-repeat: no-repeat;
+      background-size: 325px 388px;
+      z-index: -1;
+
+      @media (resolution >=2dppx) {
+        background-image: url("/img/price/price-decoration-tablet@2x.png");
+      }
+    }
+  }
+
+  @include desktop {
+    padding: 100px 103px;
+
+    &::after {
+      width: 303px;
+      height: 448px;
+      bottom: -1px;
+      background-image: url("/img/price/price-decoration-desktop.png");
+      background-repeat: no-repeat;
+      background-size: 303px 448px;
+
+      @media (resolution >=2dppx) {
+        background-image: url("/img/price/price-decoration-desktop@2x.png");
+      }
+    }
+  }
+}
+
+.price__container {
+  @include tablet {
+    max-width: 380px;
+  }
+
+  @include desktop {
+    max-width: 1160px;
+  }
+}
+
+.price__title {
+  margin: 0 0 24px;
+  text-align: center;
+
+  @include tablet {
+    margin: 0 0 29px;
+  }
+
+  @include desktop {
+    margin: 0 0 13px;
+  }
+}
+
+.price__list {
+  @include list;
+
+  margin: 0 0 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 34px;
+
+  @include tablet {
+    margin: 0 auto 45px;
+    max-width: 310px;
+    gap: 40px;
+  }
+
+  @include desktop {
+    margin: 0 auto 40px;
+    max-width: 350px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: #dedfe2;
+  }
+}
+
+.price__list-button {
+  padding: 8px 0;
+  height: 100%;
+  position: relative;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 16px;
+  color: $light;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: #dedfe2;
+  }
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgba(16, 38, 84, 0.7);
+
+      &::before {
+        background-color: #787878;
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+    color: $primary-dark;
+
+    &::before {
+      background-color: $primary-dark;
+    }
+  }
+
+  &:active {
+    color: $primary-dark;
+
+    &::before {
+      background-color: #d10a42;
+    }
+  }
+
+  &:disabled {
+    color: $primary-dark;
+    opacity: 0.3;
+    pointer-events: none;
+
+    &::before {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+.price__list-button--active {
+  color: $primary-dark;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: #d10a42;
+  }
+}
+
+.price__description {
+  @include list;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  @include tablet {
+    position: relative;
+    gap: 40px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+  }
+}

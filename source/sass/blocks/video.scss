@@ -7,7 +7,7 @@
   background-position: center;
   background-size: cover;
 
-  @media (resolution >= 2dppx) {
+  @media (min-resolution: 2dppx) {
     background-image: url("/img/about/video-preview-mobile@2x.jpg");
   }
 

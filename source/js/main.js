@@ -1,4 +1,6 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
+import { loadVideo } from './video';
+import { initPriceTabs } from './price';
+
+loadVideo(); // Загрузка видео в блоке "about"
+initPriceTabs(); // переключение табами абонементов в блоке "price"
+

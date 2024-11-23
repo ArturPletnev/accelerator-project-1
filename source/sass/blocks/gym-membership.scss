@@ -1,0 +1,195 @@
+.gym-membership {
+  padding: 50px 42px;
+  background-color: $white;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: none;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background-color: $white;
+    z-index: -1;
+  }
+
+  @include tablet {
+    padding: 65px;
+  }
+
+  @include desktop {
+    padding: 65px 55px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:has(.gym-membership__link:hover) {
+    background: linear-gradient(151deg, $accent-bg 0%, $secondary-bg 100%);
+
+    &::before {
+      content: "";
+    }
+  }
+
+  &:focus-within {
+    background: linear-gradient(151deg, $accent-bg 0%, $secondary-bg 100%);
+
+    &::before {
+      content: "";
+    }
+  }
+}
+
+.gym-membership__name {
+  margin: 0 0 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  color: $primary-dark;
+
+  @include tablet {
+    margin: 0 0 22px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @include desktop {
+    margin: 0 0 17px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.gym-membership__time {
+  margin: 0 0 18px;
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: $primary-dark;
+
+  @include tablet {
+    margin: 0 0 22px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.gym-membership__price {
+  margin: 0 0 18px;
+  padding: 48px 71px 0 37px;
+  position: relative;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  color: $price;
+  z-index: 1;
+
+  @include tablet {
+    margin: 0 0 22px;
+    padding: 60px 86px 0 42px;
+    font-size: 60px;
+    line-height: 90px;
+  }
+
+  @include desktop {
+    margin: 0 0 17px;
+    padding: 56px 86px 0 32px;
+  }
+}
+
+.gym-membership__link {
+  padding: 27px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: $primary-dark;
+
+  &:focus {
+    outline: none;
+    background: linear-gradient(151deg, rgba(237, 2, 51, 0.8) 0%, rgba(0, 62, 183, 0.8) 100%);
+    box-shadow: inset 0 0 0 2px #000000;
+    color: $white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $white;
+      box-shadow: none;
+      background: linear-gradient(151deg, $accent-bg 0%, $secondary-bg 100%);
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    background: linear-gradient(151deg, $accent-bg 0%, $secondary-bg 100%);
+    color: #deb9d0;
+  }
+
+  @include desktop {
+    margin-top: auto;
+    min-width: 230px;
+    max-width: 230px;
+    align-self: center;
+  }
+}
+
+.gym-membership__price-text {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 42px;
+    right: -37px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("/__spritemap#sprite-ruble-view");
+    background-repeat: no-repeat;
+    background-size: 24px 33px;
+    background-position: center;
+
+    @include tablet {
+      right: -44px;
+      background-size: 30px 42px;
+    }
+  }
+
+  @include desktop {
+    margin-left: 10px;
+  }
+}
+
+.gym-membership__price-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-size: 80px;
+  line-height: 150%;
+  text-align: center;
+  color: $price-shadow;
+  opacity: 0.48;
+  z-index: -1;
+  overflow: hidden;
+
+  @include tablet {
+    font-size: 100px;
+  }
+
+  @include desktop {
+    top: -5px;
+  }
+}
