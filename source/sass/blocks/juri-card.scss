@@ -1,0 +1,95 @@
+.juri-card {
+  position: relative;
+  max-width: 260px;
+  margin: 0 auto;
+
+  @media (hover: hover) {
+    &:hover {
+      .juri-card__info {
+        opacity: 1;
+      }
+
+      .juri-card__name {
+        display: none;
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    .juri-card__info {
+      opacity: 1;
+    }
+
+    .juri-card__name {
+      display: none;
+    }
+  }
+}
+
+.juri-card__image-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.juri-card__image {
+  margin: 0 auto;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.juri-card__name {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: $white;
+}
+
+.juri-card__info-name {
+  margin: 0 0 9px;
+  display: block;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: $white;
+}
+
+.juri-card__info {
+  padding: 48px 42px 51px 41px;
+  height: 100%;
+  background-color: rgba(16, 38, 84, 0.89);
+  box-shadow: 0 0 35px 0 rgba(42, 59, 99, 0.17);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.juri-card__badge {
+  margin: 0 0 34px;
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #b6bdcc;
+}
+
+.juri-card__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

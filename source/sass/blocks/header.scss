@@ -81,10 +81,11 @@
       transform: translateX(-50%);
     }
   }
-}
 
-.header__link-disabled {
-  color: $primary-bg;
-  opacity: 0.5;
-  pointer-events: none;
+  &--disabled,
+  &:disabled {
+    color: $primary-bg;
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

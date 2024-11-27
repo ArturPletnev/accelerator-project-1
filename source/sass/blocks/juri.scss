@@ -1,0 +1,31 @@
+.juri {
+  padding: 40px 30px;
+
+  @include tablet {
+    padding: 30px 45px 60px;
+  }
+
+  @include desktop {
+    padding: 100px 103px;
+  }
+}
+
+.juri__container {
+  @include tablet {
+    max-width: 560px;
+  }
+
+  @include desktop {
+    max-width: 1160px;
+  }
+}
+
+.juri__title {
+  margin: 0 0 20px;
+  text-align: center;
+
+  @include tablet {
+    margin: 0 0 46px;
+    font-size: 54px;
+  }
+}

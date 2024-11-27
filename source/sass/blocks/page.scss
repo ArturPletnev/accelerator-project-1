@@ -3,6 +3,7 @@
   background-color: transparent;
   cursor: pointer;
 
+  &--disabled,
   &:disabled {
     color: #c8c9cc;
     pointer-events: none;
