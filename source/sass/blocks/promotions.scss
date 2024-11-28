@@ -1,0 +1,140 @@
+.promotions {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 278px 400px;
+  }
+
+  @include desktop {
+    grid-template-columns: 280px 280px;
+  }
+}
+
+.promotions__description-wrapper {
+  padding: 30px 30px 25px;
+  background-color: $accent-bg;
+
+  @include tablet {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    padding: 40px 45px;
+  }
+}
+
+.promotions__image-wrapper {
+  background-color: $primary-dark;
+}
+
+.promotions__time {
+  margin: 0 0 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 22px;
+  color: $white;
+
+  @include tablet {
+    text-align: start;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @include desktop {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+.promotions__price {
+  margin-top: 9px;
+  display: block;
+  font-size: 64px;
+  line-height: 64px;
+
+  @include tablet {
+    margin-top: 20px;
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  @include desktop {
+    margin-top: 22px;
+  }
+}
+
+.promotions__text {
+  margin: 0 0 18px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: $white;
+
+  @include tablet {
+    padding: 0 0 20px;
+    margin: 13px 0 0;
+    text-align: start;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include desktop {
+    margin: 11px 0 0;
+  }
+}
+
+.promotions__link {
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  max-width: 93px;
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 1px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+  }
+
+  @include tablet {
+    margin: auto 0 0;
+    transform: translate(-10px, 5px);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:focus {
+    outline: 1px solid $white;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  &:active {
+    opacity: 1;
+    outline: none;
+
+    &::after {
+      content: "";
+    }
+  }
+}

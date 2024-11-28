@@ -1,0 +1,102 @@
+.faq {
+  padding: 71px 15px 70px;
+  background-color: $primary-bg;
+
+  @include tablet {
+    padding: 61px 45px 60px;
+  }
+
+  @include desktop {
+    padding: 99px 103px 100px;
+  }
+}
+
+.faq__container {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 260px 860px;
+    gap: 50px 40px;
+  }
+}
+
+.faq__title {
+  margin: 0 0 34px;
+  text-align: center;
+
+  @include tablet {
+    margin: 0 0 44px;
+  }
+
+  @include desktop {
+    margin: 0;
+    grid-column: 1 / -1;
+    text-align: start;
+    transform: translateY(1px);
+  }
+}
+
+.faq__list {
+  @include list;
+
+  margin: 0 0 35px;
+  display: grid;
+  grid-template-columns: 140px 140px;
+  gap: 10px;
+
+  @include tablet {
+    margin: 0 0 45px;
+    grid-template-columns: repeat(4, 162px);
+  }
+
+  @include desktop {
+    margin: 1px 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.faq__button {
+  padding: 15px 22px;
+  width: 100%;
+  box-shadow: inset 0 0 0 1px $tab-border;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: $primary-dark;
+
+  &--active {
+    border: none;
+    color: $white;
+    background: linear-gradient(100deg, $accent-bg 0%, $secondary-bg 100%);
+  }
+
+  @include tablet {
+    padding: 18px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @include desktop {
+    padding: 21px 18px 15px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: inset 0 0 0 1px $primary-dark;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px $primary-dark;
+    background-color: $white;
+  }
+
+  &:active {
+    color: $white;
+    background: linear-gradient(100deg, $accent-bg 0%, $secondary-bg 100%);
+    box-shadow: none;
+  }
+}

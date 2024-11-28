@@ -1,5 +1,6 @@
 .swiper-container {
   position: relative;
+  height: 300px;
 }
 
 .swiper-container .swiper-review,
@@ -143,6 +144,4 @@
 
 .swiper-wrapper {
   @include list;
-
-  height: 300px;
 }

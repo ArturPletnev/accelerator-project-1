@@ -1,0 +1,237 @@
+.fag-accordion {
+  @include list;
+
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    margin-top: -1px;
+  }
+}
+
+.fag-accordion__item {
+  padding: 20px 0;
+  border-top: 1px solid $divider;
+
+  &:last-child {
+    border-bottom: 1px solid $divider;
+  }
+
+  @include tablet {
+    padding: 24px 0 22px;
+  }
+
+  @include desktop {
+    padding: 24px 0 21px;
+  }
+
+  .fag-accordion__item-button {
+    padding: 0;
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    color: $primary-dark;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  span {
+    margin: 0;
+    display: block;
+    max-width: 238px;
+    cursor: pointer;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: $primary-dark;
+
+    @include tablet {
+      max-width: 560px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      line-height: 22px;
+    }
+
+    @include desktop {
+      max-width: 660px;
+      font-size: 24px;
+      line-height: 24px;
+      transform: translateY(-1px);
+    }
+  }
+
+  p {
+    margin: 0;
+    max-width: 238px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear, margin 200ms linear;
+    will-change: opacity, max-height, margin;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: $primary-dark;
+
+    @include tablet {
+      max-width: 560px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include desktop {
+      max-width: 658px;
+    }
+  }
+}
+
+.fag-accordion__item .fag-accordion__item-icon {
+  display: inline-block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border: 1px solid $btn-border;
+  border-radius: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: currentColor;
+
+    @include tablet {
+      width: 20px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: currentColor;
+
+    @include tablet {
+      height: 20px;
+    }
+  }
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+}
+
+.fag-accordion__item .fag-accordion__item-button.fag-accordion__item-button--active {
+  .fag-accordion__item-icon {
+    border: none;
+    background-color: $btn-border;
+  }
+
+  .fag-accordion__item-icon::before {
+    background-color: $white;
+  }
+
+  .fag-accordion__item-icon::after {
+    width: 0;
+  }
+
+  + p {
+    margin: 20px 0 0;
+    max-height: 100%;
+    opacity: 1;
+    transition: all 200ms linear;
+    will-change: opacity, max-height, margin;
+
+    @include tablet {
+      margin: 10px 0 0;
+    }
+
+    @include desktop {
+      margin: 24px 0 0;
+    }
+  }
+}
+
+.fag-accordion__item-button {
+  @media (hover: hover) {
+    &:hover {
+      .accordion-item__icon {
+        border: none;
+        background-color: $btn-border;
+      }
+
+      .fag-accordion__item-icon::before,
+      .fag-accordion__item-icon::after {
+        background-color: $white;
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    .fag-accordion__item-icon {
+      background-color: $divider;
+    }
+
+    .fag-accordion__item-icon::before,
+    .fag-accordion__item-icon::after {
+      background-color: $white;
+    }
+  }
+
+  &:disabled {
+    .fag-accordion__item-icon {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &:disabled:hover {
+    .fag-accordion__item-icon {
+      border: 1px solid $btn-border;
+      background-color: $white;
+    }
+
+    .fag-accordion__item-icon::before,
+    .fag-accordion__item-icon::after {
+      background-color: $btn-border;
+    }
+  }
+}
+
+.fag-accordion__item-button.fag-accordion__item-button--active {
+  @media (hover: hover) {
+    &:hover {
+      .fag-accordion__item-icon {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &:focus {
+    .fag-accordion__item-icon {
+      opacity: 0.9;
+    }
+  }
+}
+
