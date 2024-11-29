@@ -1,0 +1,154 @@
+.contacts {
+  padding: 37px 15px 39px;
+
+  @include tablet {
+    padding: 60px 164px 61px;
+  }
+
+  @include desktop {
+    padding: 60px 0 70px;
+  }
+}
+
+.contacts__container {
+  @include desktop {
+    margin: 0;
+    max-width: 477px;
+  }
+}
+
+.contacts__title {
+  margin: 0 0 37px;
+
+  @include tablet {
+    margin: 0 0 35px;
+    font-size: 54px;
+    text-align: center;
+  }
+
+  @include desktop {
+    margin: 0 0 36px;
+    text-align: start;
+  }
+}
+
+.contacts__list {
+  @include list;
+
+  max-width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 27.5px;
+
+  @include tablet {
+    position: relative;
+    max-width: none;
+    display: grid;
+    grid-template-columns: 190px 190px;
+    gap: 14px 60px;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      background-color: $divider;
+    }
+  }
+
+  @include desktop {
+    grid-template-columns: 178px 178px;
+    gap: 14px 121px;
+  }
+}
+
+.contacts__address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary-dark;
+
+  @include tablet {
+    line-height: 22px;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+  font-size: 20px;
+  line-height: 20px;
+  color: $primary-dark;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 24px;
+    gap: 6px;
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      order: 3;
+    }
+  }
+}
+
+.contacts__schedule {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary-dark;
+
+  @include tablet {
+    line-height: 22px;
+  }
+}
+
+.contacts__phone {
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary-dark;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      color: $divider;
+    }
+  }
+
+  &:active {
+    color: $primary-dark;
+  }
+
+  @include tablet {
+    line-height: 22px;
+  }
+}
+
+.contacts__email {
+  align-self: flex-start;
+  text-decoration: none;
+  color: $primary-dark;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      color: $divider;
+    }
+  }
+
+  &:active {
+    color: $primary-dark;
+  }
+
+  @include tablet {
+    line-height: 22px;
+  }
+}

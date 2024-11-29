@@ -90,7 +90,30 @@
 }
 
 .juri-card__info-list {
+  @include list;
+
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
+.juri-card__info-item {
+  padding-left: 16px;
+  position: relative;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: 0;
+    background-color: $white;
+    border-radius: 100%;
+  }
+}
+

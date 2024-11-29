@@ -1,0 +1,30 @@
+.feedback {
+  padding: 0;
+
+  @include desktop {
+    background: linear-gradient(90deg, $primary-dark 50%, $white 50%, $white 100%);
+    position: relative;
+    margin-bottom: -1px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 1px;
+      top: 0;
+      right: 0;
+      background-color: $divider;
+    }
+  }
+}
+
+.feedback__container {
+  max-width: none;
+
+  @include desktop {
+    max-width: 1160px;
+    display: grid;
+    grid-template-columns: 477px 477px;
+    gap: 206px;
+  }
+}

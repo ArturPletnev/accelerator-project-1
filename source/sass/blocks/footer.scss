@@ -1,0 +1,41 @@
+.footer {
+  margin-top: auto;
+  padding: 40px 15px;
+  background-color: $dark;
+
+  @include tablet {
+    padding: 45px;
+  }
+
+  @include desktop {
+    padding: 40px 103px;
+  }
+}
+
+.footer__container {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 110px 413px 105px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @include desktop {
+    grid-template-columns: 130px 619px 95px;
+    gap: 140px;
+  }
+}
+
+.footer__logo {
+  display: inline-block;
+  margin: 0 0 26px;
+
+  @include tablet {
+    margin: 0 0 3px;
+  }
+
+  @include desktop {
+    margin: 0;
+  }
+}
